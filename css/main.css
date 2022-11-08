@@ -1,0 +1,397 @@
+/*
+0       --- 600px    => Mobile Phones
+600px   --- 900px    => Tablet Portrait
+900px   --- 1200px   => Tablet Landscape
+1200px  --- 1800px[ we already styled that which is the desktop version]
+----------- 1800px + => Big Desktop
+*/
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  line-height: 1.7;
+  max-width: 100vw;
+  height: 100vh;
+  background-color: #f5f3f7;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+@media screen and (max-width: 37.5em) {
+  body {
+    height: 100%;
+  }
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+}
+
+@media screen and (max-width: 37.5em) {
+  main {
+    position: relative;
+    height: 100%;
+  }
+}
+
+main .leftBg {
+  width: 40rem;
+  background: linear-gradient(to top right, #8838ff 5%, #e942ff 95%);
+  height: 80vh;
+  border-bottom-left-radius: 50rem;
+  border-bottom-right-radius: 50rem;
+  position: absolute;
+  top: 0;
+  left: -5rem;
+  z-index: 1000;
+}
+
+@media screen and (max-width: 37.5em) {
+  main .leftBg {
+    top: 0;
+    left: -20rem;
+  }
+}
+
+main .rightBg {
+  width: 40rem;
+  height: 80vh;
+  border-top-left-radius: 50rem;
+  border-top-right-radius: 50rem;
+  background: linear-gradient(to top left, #d89eff, #f5f3f7);
+  position: absolute;
+  bottom: 0;
+  right: -5rem;
+  z-index: 1000;
+}
+
+@media screen and (max-width: 37.5em) {
+  main .rightBg {
+    bottom: 0;
+    right: -20rem;
+    background: linear-gradient(to top left, #e5ccf5 5%, white 95%);
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 91rem;
+  margin: 4rem auto;
+  position: relative;
+  z-index: 9999;
+}
+
+@media screen and (max-width: 75em) {
+  .container {
+    width: 85rem;
+  }
+}
+
+@media screen and (max-width: 56.25em) {
+  .container {
+    width: 60rem;
+  }
+}
+
+@media screen and (max-width: 37.5em) {
+  .container {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.container .appBody__container {
+  padding: 1rem;
+  background-color: white;
+  border-radius: 4rem;
+  color: white;
+}
+
+.container .appBody {
+  width: 27rem;
+  background-color: #f5f3f7;
+  display: flex;
+  flex-direction: column;
+  border-radius: 3rem;
+}
+
+.container .appBody__header {
+  position: relative;
+  padding: 3.5rem 1rem 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #8838ff, #e942ff);
+  border-radius: 3rem 3rem 0.5rem 0.5rem;
+}
+
+.container .appBody__header .top-white {
+  width: 12rem;
+  position: absolute;
+  top: -0.3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 2.5rem;
+  background-color: white;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+
+.container .appBody__header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.container .appBody__header-left img {
+  width: 3rem;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+.container .appBody__header-left > p {
+  font-size: 1.8rem;
+}
+
+.container .appBody__header-left h2 {
+  line-height: 1.3rem;
+  font-weight: 700;
+}
+
+.container .appBody__header-left p {
+  color: #d89eff;
+  font-weight: 600;
+}
+
+.container .appBody__header-right .icon {
+  font-size: 2rem;
+}
+
+.container .appBody__chatBox {
+  width: 100%;
+  padding: 1rem;
+}
+
+.container .appBody__chatBox .receivedMsg {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 1.2rem;
+}
+
+.container .appBody__chatBox .receivedMsg .chat {
+  width: 60%;
+  padding: 0.6rem 1rem;
+  background-color: rgba(216, 158, 255, 0.171);
+  margin-bottom: 0.6rem;
+  border-radius: 1.6rem 1.6rem 1.6rem 0.7rem;
+}
+
+.container .appBody__chatBox .receivedMsg .chat p {
+  color: #9241c8;
+  line-height: 1.2rem;
+}
+
+.container .appBody__chatBox .receivedMsg .pricing {
+  border-radius: 1.6rem 1.6rem 1.6rem 0.7rem;
+  padding: 0.6rem;
+  background: linear-gradient(to top right, #e942ff, #8838ff);
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.container .appBody__chatBox .receivedMsg .pricing__info {
+  display: flex;
+  gap: 1rem;
+}
+
+.container .appBody__chatBox .receivedMsg .pricing__info .custom-radio-input {
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  border: 1px solid #e570ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .appBody__chatBox .receivedMsg .pricing__info .custom-radio-input input[type="radio"] {
+  display: none;
+}
+
+.container .appBody__chatBox .receivedMsg .pricing__info .custom-radio-input .checkmark {
+  width: calc(100% - 0.6rem);
+  height: calc(100% - 0.6rem);
+  background-color: #e570ff;
+  display: inline-block;
+  border-radius: 50%;
+  opacity: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.container .appBody__chatBox .receivedMsg .pricing__info .custom-radio-input input:checked + .checkmark {
+  opacity: 1;
+}
+
+.container .appBody__chatBox .receivedMsg .pricing__price p {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.container .appBody__chatBox .sentMsg {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.container .appBody__chatBox .sentMsg__img {
+  display: flex;
+  gap: 1rem;
+}
+
+.container .appBody__chatBox .sentMsg__img img {
+  display: block;
+  width: 5rem;
+  border-radius: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.container .appBody__chatBox .sentMsg .chat {
+  width: 60%;
+  padding: 0.6rem 1rem;
+  background-color: white;
+  margin-bottom: 0.6rem;
+  border-radius: 1.6rem 1.6rem 0.7rem 1.6rem;
+}
+
+.container .appBody__chatBox .sentMsg .chat p {
+  color: #6e5d7e;
+  line-height: 1.2rem;
+}
+
+.container .appBody__chatBox form {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 0.7rem;
+  border-radius: 2rem;
+}
+
+.container .appBody__chatBox form label {
+  display: none;
+}
+
+.container .appBody__chatBox form input {
+  width: 80%;
+  height: 3.5rem;
+  padding: 1rem 0.4rem 0.4rem 0.8rem;
+  border: none;
+  outline: none;
+}
+
+.container .appBody__chatBox form input::placeholder {
+  color: #c6cacd;
+}
+
+.container .appBody__chatBox form button {
+  border-radius: 50%;
+  width: 3rem;
+  background-color: #3e2753;
+  border: none;
+  cursor: pointer;
+}
+
+.container .appBody__chatBox form button .icon {
+  color: white;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.container .description {
+  width: 49rem;
+}
+
+@media screen and (max-width: 75em) {
+  .container .description {
+    width: 40rem;
+  }
+}
+
+@media screen and (max-width: 56.25em) {
+  .container .description {
+    width: 30rem;
+  }
+}
+
+@media screen and (max-width: 37.5em) {
+  .container .description {
+    width: 100%;
+    padding: 3rem;
+  }
+}
+
+.container .description h1 {
+  font-size: 4rem;
+  font-weight: 500;
+  color: #3e2753;
+}
+
+@media screen and (max-width: 56.25em) {
+  .container .description h1 {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 37.5em) {
+  .container .description h1 {
+    text-align: center;
+    font-size: 3.5rem;
+  }
+}
+
+.container .description p {
+  font-size: 1.8rem;
+  color: #a39daa;
+}
+
+@media screen and (max-width: 75em) {
+  .container .description p {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 56.25em) {
+  .container .description p {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 37.5em) {
+  .container .description p {
+    font-size: 1.6rem;
+    text-align: center;
+    padding-bottom: 3rem;
+  }
+}
+/*# sourceMappingURL=main.css.map */

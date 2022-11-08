@@ -1,0 +1,47 @@
+main {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+
+    @include for(phone) {
+      position: relative;  
+      height: 100%;  
+    } 
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    
+
+    .leftBg {
+        width: 40rem;
+        background: linear-gradient(to top right, $color-violet 5%, $color-magenta 95%);
+        height: 80vh;
+        border-bottom-left-radius: 50rem;
+        border-bottom-right-radius: 50rem;
+        position: absolute;
+        top: 0;
+        left: -5rem;
+        z-index: 1000;
+        @include for(phone) {
+            top: 0;
+            left: -20rem;
+        }
+    }
+    .rightBg {
+        width: 40rem;
+        height: 80vh;
+        border-top-left-radius: 50rem;
+        border-top-right-radius: 50rem;
+        background: linear-gradient(to top left, $color-sub-headings, $color-appBg);
+        position: absolute;
+        bottom: 0;
+        right: -5rem;
+        z-index: 1000;
+        @include for(phone) {
+            bottom: 0;
+            right: -20rem;
+            background: linear-gradient(to top left,  hsl(276, 68%, 88%) 5%, $color-white 95% );
+        }
+    }
+}
